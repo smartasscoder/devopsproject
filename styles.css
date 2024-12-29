@@ -1,19 +1,19 @@
-/* General Reset */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body Styles */
+
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #F5F5F5;
+    background-color: #F55F5;
     color: #2C2C2C;
     line-height: 1.6;
 }
 
-/* Header Styles */
+
 header {
     background-color: #2C3E50;
     color: #FFFFFF;
