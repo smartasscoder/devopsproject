@@ -1,0 +1,224 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #F55F5;
+    color: #2C2C2C;
+    line-height: 1.6;
+}
+
+
+header {
+    background-color: #2C3E50;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 20px;
+    border-bottom: 5px solid #16A085;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+nav {
+    margin-top: 15px;
+}
+
+nav a {
+    color: #FFFFFF;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* About Me Section */
+.about-me {
+    background-color: #FFFFFF;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+}
+
+.about-content {
+    flex: 1;
+}
+
+.profile-image {
+    text-align: center;
+    margin-top: -70px;
+}
+
+.profile-image img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px solid #D3D3D3;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Skills Section */
+.skills {
+    background-color: #A8E6CF;
+    padding: 40px 20px;
+    text-align: left;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 600px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+}
+
+.skills:hover {
+    transform: scale(1.02);
+}
+
+.skills h2 {
+    color: #2C3E50;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.skills ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.skills ul li {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.skills ul li::before {
+    content: '✔';
+    color: #2C3E50;
+    position: absolute;
+    left: -25px;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* Registration Form */
+.registration-form {
+    background-color: #FFFFFF;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 40px auto;
+    max-width: 500px;
+}
+
+.form-container h2 {
+    color: #2C3E50;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1em;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #D3D3D3;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.form-group input[type="submit"] {
+    background-color: #16A085;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background-color 0.3s;
+}
+
+.form-group input[type="submit"]:hover {
+    background-color: #149A77;
+}
+
+/* Success Page Styles */
+.success-message {
+    background-color: #FFFFFF;
+    margin: 50px auto;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    text-align: center;
+}
+
+.success-message h1 {
+    font-size: 2.5em;
+    color: #16A085; /* Coordinated green for success */
+    margin-bottom: 20px;
+}
+
+.success-message p {
+    font-size: 1.2em;
+    color: #2C3E50;
+    margin-bottom: 30px;
+}
+
+.success-message .btn {
+    display: inline-block;
+    background-color: #16A085;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.success-message .btn:hover {
+    background-color: #149A77;
+    transform: scale(1.05);
+}
+
+/* Footer for Success Page */
+footer {
+    background-color: #2C3E50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+footer p {
+    font-size: 0.9em;
+    margin: 5px 0;
+}
