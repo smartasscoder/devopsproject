@@ -2,13 +2,12 @@ pipeline {
     agent any
 
     environment {
-    GIT_REPO = 'https://github.com/smartasscoder/devopsproject.git'
-    BRANCH = 'main'
-    DOCKER_REGISTRY = 'docker.io'
-    BACKEND_IMAGE = 'eeman555/portfolio:latest'
-    DOCKER_CREDENTIALS = credentials('dockerhub') // Replace 'dockerhub' with the ID of your credentials
-}
-
+        GIT_REPO = 'https://github.com/smartasscoder/devopsproject.git'
+        BRANCH = 'main'
+        DOCKER_REGISTRY = 'docker.io'
+        BACKEND_IMAGE = 'eeman555/portfolio:latest'
+        DOCKER_CREDENTIALS = credentials('dockerhub') // Replace 'dockerhub' with your credentials ID
+    }
 
     stages {
         stage('Checkout') {
@@ -41,7 +40,7 @@ pipeline {
                 script {
                     echo "Logging into Docker Hub and pushing the Docker image..."
                     bat """
-                        echo ${DOCKER_PASS} | docker login ${DOCKER_REGISTRY} -u ${DOCKER_USER} --password-stdin
+                        echo ${DOCKER_CREDENTIALS_PSW} | docker login ${DOCKER_REGISTRY} -u ${DOCKER_CREDENTIALS_USR} --password-stdin
                         docker push ${BACKEND_IMAGE}
                     """
                 }
