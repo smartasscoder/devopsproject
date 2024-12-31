@@ -4,8 +4,9 @@ pipeline {
     environment {
         GIT_REPO = 'https://github.com/smartasscoder/devopsproject.git'
         BRANCH = 'main'
-        DOCKER_REGISTRY = 'docker.io' 
-        BACKEND_IMAGE = 'docker.io/eeman555/portfolio:latest'
+        DOCKER_REGISTRY = 'docker.io'
+        BACKEND_IMAGE = 'eeman555/portfolio:latest'
+        DOCKER_PASSWORD = 'eman12345'
     }
 
     stages {
@@ -26,10 +27,10 @@ pipeline {
         stage('Build Backend') {
             steps {
                 script {
-                    echo "Building Docker image for Server..."
-                        bat '''
-                            docker build -t %BACKEND_IMAGE% .
-                        '''
+                    echo "Building Docker image for the backend..."
+                    bat """
+                        docker build -t ${BACKEND_IMAGE} .
+                    """
                 }
             }
         }
@@ -39,7 +40,7 @@ pipeline {
                 script {
                     echo "Logging into Docker Hub and pushing the Docker image..."
                     bat """
-                        echo eman12345 | docker login ${DOCKER_REGISTRY} -u eeman555 --password-stdin
+                        echo ${DOCKER_PASSWORD} | docker login ${DOCKER_REGISTRY} -u eeman555 --password-stdin
                         docker push ${BACKEND_IMAGE}
                     """
                 }
@@ -49,8 +50,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo "Deploying the application..."
-                // Add deployment commands here
                 bat 'echo Deploy step executed'
+                // Add actual deployment commands here
             }
         }
     }
