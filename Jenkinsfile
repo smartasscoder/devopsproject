@@ -7,6 +7,7 @@ pipeline {
         DOCKER_REGISTRY = 'docker.io'
         BACKEND_IMAGE = 'eeman555/portfolio:latest'
         DOCKER_PASSWORD = 'eman12345'
+        DOCKER_USER = 'eeman555'
     }
 
     stages {
@@ -40,7 +41,7 @@ pipeline {
                 script {
                     echo "Logging into Docker Hub and pushing the Docker image..."
                     bat """
-                        echo eman12345 | docker login ${DOCKER_REGISTRY} -u eeman555 --password-stdin
+                        echo ${DOCKER_PASS} | docker login ${DOCKER_REGISTRY} -u ${DOCKER_USER} --password-stdin
                         docker push ${BACKEND_IMAGE}
                     """
                 }
