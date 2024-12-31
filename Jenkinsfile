@@ -2,13 +2,13 @@ pipeline {
     agent any
 
     environment {
-        GIT_REPO = 'https://github.com/smartasscoder/devopsproject.git'
-        BRANCH = 'main'
-        DOCKER_REGISTRY = 'docker.io'
-        BACKEND_IMAGE = 'eeman555/portfolio:latest'
-        DOCKER_PASSWORD = 'eman12345'
-        DOCKER_USER = 'eeman555'
-    }
+    GIT_REPO = 'https://github.com/smartasscoder/devopsproject.git'
+    BRANCH = 'main'
+    DOCKER_REGISTRY = 'docker.io'
+    BACKEND_IMAGE = 'eeman555/portfolio:latest'
+    DOCKER_CREDENTIALS = credentials('dockerhub') // Replace 'dockerhub' with the ID of your credentials
+}
+
 
     stages {
         stage('Checkout') {
