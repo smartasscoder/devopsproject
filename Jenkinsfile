@@ -40,7 +40,7 @@ pipeline {
                 script {
                     echo "Logging into Docker Hub and pushing the Docker image..."
                     bat """
-                        echo ${DOCKER_PASSWORD} | docker login ${DOCKER_REGISTRY} -u eeman555 --password-stdin
+                        echo eman12345| docker login -u eeman555 --password-stdin
                         docker push ${BACKEND_IMAGE}
                     """
                 }
