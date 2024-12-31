@@ -5,7 +5,7 @@ pipeline {
         GIT_REPO = 'https://github.com/smartasscoder/devopsproject.git'
         BRANCH = 'main'
         DOCKER_REGISTRY = 'docker.io' 
-        BACKEND_IMAGE = 'docker.io/eeman555/porfolio:latest'
+        BACKEND_IMAGE = 'docker.io/eeman555/portfolio:latest'
     }
 
     stages {
@@ -34,15 +34,13 @@ pipeline {
             }
         }
 
-        stage('Push Docker Images') {
+        stage('Push Docker Image') {
             steps {
                 script {
-                    echo "Logging into Docker Hub and pushing Docker images..."
-                    
-                    // Use echo for secure password handling
+                    echo "Logging into Docker Hub and pushing the Docker image..."
                     bat """
-                        echo eman12345 | docker login %DOCKER_REGISTRY% -u eeman555 --password-stdin
-                        docker push %BACKEND_IMAGE%
+                        echo eman12345 | docker login ${DOCKER_REGISTRY} -u eeman555 --password-stdin
+                        docker push ${BACKEND_IMAGE}
                     """
                 }
             }
