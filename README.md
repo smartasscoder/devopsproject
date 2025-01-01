@@ -27,5 +27,5 @@ The project integrates the following tools:
 
 1. **Clone the Repository**:
    ```bash
- git clone https://github.com/smartasscoder/devopsproject.git
- cd devopsproject
+   git clone https://github.com/smartasscoder/devopsproject.git
+   cd devopsproject
